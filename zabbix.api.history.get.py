@@ -7,6 +7,21 @@ import copy
 import time
 import sys
 import os
+from zabbix.server.info import *
+
+
+## ZABBIX INFO
+#ZABBIX_SERVER = "10.0.0.1"
+#
+#ZABBIX_USER = {
+#    "user":"username",
+#    "password":"password",
+#}
+#
+#ZABBIX_API_URL = "http://{}/zabbix/api_jsonrpc.php".format(ZABBIX_SERVER)
+#ZABBIX_API_HEADER = {"Content-Type":"application/json"}
+#
+#ZABBIX_API_AUTH_TOKEN = "auth_token"
 
 #
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -17,18 +32,6 @@ LIST_OF_HOSTID_HOSTIP_HN = os.path.join(BASE_DIR, "LIST_OF_HOSTID_HOSTIP_HN")
 # 
 INITIAL = True if not os.path.exists(LIST_OF_ITEMID) else False
 
-# ZABBIX INFO
-ZABBIX_SERVER = "10.70.219.40"
-
-ZABBIX_USER = {
-    "user":"Admin",
-    "password":"gbLW_201809#)",
-}
-
-ZABBIX_API_URL = "http://{}/zabbix/api_jsonrpc.php".format(ZABBIX_SERVER)
-ZABBIX_API_HEADER = {"Content-Type":"application/json"}
-
-ZABBIX_API_AUTH_TOKEN = "744f81bef870bef37da67d202f65635d"
 
 # 
 time_till = int(time.time())
@@ -253,3 +256,5 @@ if __name__ == "__main__":
             error_list.append([hostid, hostip, hostname, itemid_v])
 
         print(error_list)
+
+#<<< END
